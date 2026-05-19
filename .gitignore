@@ -1,0 +1,10 @@
+.env
+app/.env
+
+app/vendor/
+app/node_modules/
+
+.idea/
+.vscode/
+
+.DS_Store
