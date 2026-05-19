@@ -10,6 +10,18 @@ services:
     depends_on:
       - postgres
 
+  scheduler:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./laravel:/var/www
+    depends_on:
+      - app
+      - postgres
+    command: sh -c "while true; do php artisan schedule:run; sleep 60; done"
+
   nginx:
     image: nginx:stable-alpine
     container_name: amopoint-laravel-test-nginx
