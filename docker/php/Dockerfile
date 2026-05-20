@@ -5,14 +5,12 @@ RUN apk add --no-cache \
     curl \
     unzip \
     libpq-dev \
-    icu-dev \
-    oniguruma-dev \
-    bash
+    nodejs \
+    npm
 
 RUN docker-php-ext-install \
     pdo \
-    pdo_pgsql \
-    intl
+    pdo_pgsql
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
