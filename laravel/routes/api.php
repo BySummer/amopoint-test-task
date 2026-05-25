@@ -28,7 +28,10 @@ Route::post('/track', function (Request $request) {
         }
 
     } catch (Throwable $e) {
-        //
+        return response()->json([
+            'success' => false,
+            'message' => $e->getMessage()
+        ]);
     }
 
     Visit::create([

